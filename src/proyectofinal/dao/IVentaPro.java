@@ -16,7 +16,6 @@ public interface IVentaPro {
     
     public int insertar(VentaPro ventapro) throws Exception;
     public int modificar(VentaPro ventapro) throws Exception;
-    public int eliminar(VentaPro ventapro) throws Exception;
-    public VentaPro obtener(int codigo) throws Exception;
+    public VentaPro obtener(int codigoVP) throws Exception;
     public List<VentaPro> obtener() throws Exception;  
 }
