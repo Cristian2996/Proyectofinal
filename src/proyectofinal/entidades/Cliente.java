@@ -5,7 +5,7 @@
  */
 package proyectofinal.entidades;
 public class Cliente {
-    private int codigoC;
+    private int codigo_C;
     private String nombre;
     private String apellido;
     private String cedula;
@@ -16,8 +16,8 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(int codigoC, String nombre, String apellido, String cedula, String direccion, String telefono, String sexo) {
-        this.codigoC = codigoC;
+    public Cliente(int codigo_C, String nombre, String apellido, String cedula, String direccion, String telefono, String sexo) {
+        this.codigo_C = codigo_C;
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
@@ -26,12 +26,12 @@ public class Cliente {
         this.sexo = sexo;
     }
 
-    public int getCodigoC() {
-        return codigoC;
+    public int getCodigo_C() {
+        return codigo_C;
     }
 
-    public void setCodigoC(int codigoC) {
-        this.codigoC = codigoC;
+    public void setCodigo_C(int codigo_C) {
+        this.codigo_C = codigo_C;
     }
 
     public String getNombre() {

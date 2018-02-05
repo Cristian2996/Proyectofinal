@@ -7,6 +7,7 @@ package proyectofinal.Impl;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.sql.*;
 import java.util.List;
 import proyectofinal.accesodatos.Conexion;
 import proyectofinal.accesodatos.Parametro;
@@ -24,7 +25,7 @@ public class ClienteImpl implements ICliente {
         int numFilasAfectadas = 0;
         String sql = "insert into Cliente values (?,?,?,?,?,?,?)";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, cliente.getCodigoC()));
+        lstPar.add(new Parametro(1, cliente.getCodigo_C()));
         lstPar.add(new Parametro(2, cliente.getNombre()));
         lstPar.add(new Parametro(3, cliente.getApellido()));
         lstPar.add(new Parametro(4, cliente.getCedula()));
@@ -48,11 +49,11 @@ public class ClienteImpl implements ICliente {
     public int modificar(Cliente cliente) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "UPDATE Cliente"
-                + "   SET codigoC=?, nombre=?, apellido=?,cedula=?, "
+                + "   SET codigo_C=?, nombre=?, apellido=?,cedula=?, "
                 + "direccion=?, telefono=?, sexo=?"
-                + " where codigoC=?";
+                + " where codigo_C=?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, cliente.getCodigoC()));
+        lstPar.add(new Parametro(1, cliente.getCodigo_C()));
         lstPar.add(new Parametro(2, cliente.getNombre()));
         lstPar.add(new Parametro(3, cliente.getApellido()));
         lstPar.add(new Parametro(4, cliente.getCedula()));
@@ -78,9 +79,9 @@ public class ClienteImpl implements ICliente {
     @Override
     public int eliminar(Cliente cliente) throws Exception {
         int numFilasAfectadas = 0;
-        String sql = "DELETE FROM cliente  where codigoC=?";
+        String sql = "DELETE FROM Cliente  where codigo_C=?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, cliente.getCodigoC()));
+        lstPar.add(new Parametro(1, cliente.getCodigo_C()));
         Conexion con = null;
         try {
             con = new Conexion();
@@ -97,11 +98,11 @@ public class ClienteImpl implements ICliente {
     }
 
     @Override
-    public Cliente obtener(int codigoC) throws Exception {
+    public Cliente obtener(int codigo_C) throws Exception {
         Cliente cliente = null;
-        String sql = "SELECT * FROM cliente where codigoC=?;";
+        String sql = "SELECT * FROM Cliente where codigo_C=?;";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, codigoC));
+        lstPar.add(new Parametro(1, codigo_C));
         Conexion con = null;
         try {
             con = new Conexion();
@@ -109,7 +110,7 @@ public class ClienteImpl implements ICliente {
             ResultSet rst = con.ejecutaQuery(sql, lstPar);
             while (rst.next()) {
                 cliente = new Cliente();
-                cliente.setCodigoC(rst.getInt(1));
+                cliente.setCodigo_C(rst.getInt(1));
                 cliente.setNombre(rst.getString(2));
                 cliente.setApellido(rst.getString(3));
                 cliente.setCedula(rst.getString(4));
@@ -130,7 +131,7 @@ public class ClienteImpl implements ICliente {
     @Override
     public List<Cliente> obtener() throws Exception {
         List<Cliente> lista = new ArrayList<>();
-         String sql = "SELECT * FROM cliente ";        
+         String sql = "SELECT * FROM Cliente ";        
         Conexion con = null;
         try {
             con = new Conexion();
@@ -139,13 +140,13 @@ public class ClienteImpl implements ICliente {
             Cliente cliente=null;
             while (rst.next()) {
                 cliente = new Cliente();
-                cliente.setCodigoC(rst.getInt(1));
+                cliente.setCodigo_C(rst.getInt(1));
                 cliente.setNombre(rst.getString(2));
                 cliente.setApellido(rst.getString(3));
                 cliente.setCedula(rst.getString(4));
-                cliente.setDireccion(rst.getString(11));
-                cliente.setTelefono(rst.getString(5));
-                cliente.setSexo(rst.getString(9));
+                cliente.setDireccion(rst.getString(5));
+                cliente.setTelefono(rst.getString(6));
+                cliente.setSexo(rst.getString(7));
 
                 
                 

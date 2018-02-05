@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package proyectofinal.dao;
-
-import java.util.List;
+import java.util.ArrayList;
+import java.util.*;
 import proyectofinal.entidades.Cliente;
 
 /**
@@ -16,6 +16,6 @@ public interface ICliente {
     public int insertar(Cliente cliente) throws Exception;
     public int modificar(Cliente cliente) throws Exception;
     public int eliminar(Cliente cliente) throws Exception;
-    public Cliente obtener(int codigoC) throws Exception;
+    public Cliente obtener(int codigo_C) throws Exception;
     public List<Cliente> obtener() throws Exception; 
 }
