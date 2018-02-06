@@ -8,11 +8,11 @@ package proyectofinal.entidades;
 import java.util.Date;
 
 public class Salida {
-int codigoS;
-Date fecha_registro;
-Date fecha_salida;
-String responsable;
-String vendedor;
+private int codigoS;
+private Date fecha_registro;
+private Date fecha_salida;
+private String responsable;
+private String vendedor;
 
     public Salida() {
     }
