@@ -10,7 +10,7 @@ import java.util.List;
 public class Conexion {
 
     final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    final String URL = "jdbc:sqlserver://172.30.60.187:1433;databaseName=ProyectoFinal";
+    final String URL = "jdbc:sqlserver://192.168.100.7:1433;databaseName=ProyectoFinal";
     final String USER = "Cristian1";
     final String PASS = "1234";
     Connection con = null;
