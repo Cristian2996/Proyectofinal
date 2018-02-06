@@ -41,7 +41,7 @@ public class EntradaVista extends JInternalFrame{
         pnlcentral = new JPanel();
         pnlpie = new JPanel();
 
-        pnlcentral.setLayout(new GridLayout(5, 2, 5, 5));
+        pnlcentral.setLayout(new GridLayout(6, 2, 5, 5));
         pnlpie.setLayout(new GridLayout(1, 2, 5, 5));
         titulo = new JLabel("DATOS DE ENTRADA");
 
